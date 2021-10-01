@@ -34,7 +34,7 @@
         <dependency>
             <groupId>dev.jorel.CommandAPI</groupId>
             <artifactId>commandapi-shade</artifactId>
-            <version>5.12</version>
+            <version>6.3.1</version>
         </dependency>
     </dependencies>
 
