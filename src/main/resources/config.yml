@@ -1,0 +1,11 @@
+# Config of tpsScoreboard
+
+# Set if the plugin should write the TPS in a scoreboard objective automatically
+# You can enable this, set the objective name and the player name (can be a fake player like #tps)
+# With the tickInterval you set the amount how often the TPS score will be refreshed.
+# You have to set the broadcast-console-to-ops option to false if you dont want to get the messages (like [Server: Set [tps] for #tps to 20])
+writeTpsIntoScoreboard:
+  enabled: false
+  objectiveName: "tps"
+  playerName: "#tps"
+  tickInterval: 200

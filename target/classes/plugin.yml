@@ -1,0 +1,14 @@
+main: net.jandie1505.tpsScoreboard.TpsScoreboard
+name: tpsScoreboard
+version: 1.0
+api-version: 1.16
+
+permissions:
+  tpsscoreboard.gettps:
+    description: /gettps
+    default: op
+  tpsscoreboard.*:
+    description: Wildcard permission
+    default: op
+    children:
+      tpsscoreboard.gettps: true
