@@ -1,7 +1,7 @@
 main: net.jandie1505.tpsScoreboard.TpsScoreboard
 name: tpsScoreboard
-version: 1.0
-api-version: 1.16
+version: 3.0
+api-version: 1.19
 
 permissions:
   tpsscoreboard.gettps:
