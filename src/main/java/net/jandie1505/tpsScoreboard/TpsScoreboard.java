@@ -1,11 +1,14 @@
 package net.jandie1505.tpsScoreboard;
 
 import dev.jorel.commandapi.CommandAPI;
+import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import dev.jorel.commandapi.CommandAPICommand;
+import dev.jorel.commandapi.CommandAPIConfig;
 import net.jandie1505.tpsScoreboard.config.Config;
 import net.jandie1505.tpsScoreboard.tasks.Lag;
 import net.jandie1505.tpsScoreboard.tasks.tpsScoreboard;
 import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,7 +18,7 @@ public class TpsScoreboard extends JavaPlugin {
     public void onLoad(){
         plugin = this;
         Config.load();
-        CommandAPI.onLoad(true);
+        CommandAPI.onLoad(new CommandAPIBukkitConfig(this));
 
         CommandAPICommand getTpsCommand = new CommandAPICommand("gettps")
                 .withPermission("tpsscoreboard.gettps")
@@ -25,7 +28,7 @@ public class TpsScoreboard extends JavaPlugin {
                     return (int) Lag.getTPS();
                 })
                 .executesConsole((sender, args) -> {
-                    System.out.println("§eCurrent TPS: " + Lag.getTPS());
+                    sender.sendMessage("§eCurrent TPS: " + Lag.getTPS());
                     return (int) Lag.getTPS();
                 })
                 .executesProxy((proxy, args) -> {
@@ -39,7 +42,7 @@ public class TpsScoreboard extends JavaPlugin {
 
     public void onEnable(){
         Config.load();
-        CommandAPI.onEnable(this);
+        CommandAPI.onEnable();
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Lag(), 100L, 1L);
         if(Config.writeTpsIntoScoreboard){
