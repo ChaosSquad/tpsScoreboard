@@ -18,12 +18,16 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -31,6 +35,17 @@
             <groupId>dev.jorel</groupId>
             <artifactId>commandapi-bukkit-shade</artifactId>
             <version>9.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jandie1505</groupId>
+            <artifactId>JSONConfigManager</artifactId>
+            <version>a4a6ddbf3d</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
         </dependency>
     </dependencies>
 
